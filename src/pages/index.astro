@@ -1,11 +1,358 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const services = [
+  {
+    title: "Agentes IA verticales",
+    text: "Agentes entrenados para industrias específicas, integrados a datos y sistemas reales. No chatbots genéricos.",
+  },
+  {
+    title: "Sistemas operativos de negocio",
+    text: "Micro-ERP inteligentes que reemplazan Excel, WhatsApp desordenado y procesos viejos por una lógica simple: preguntar y obtener respuestas accionables.",
+  },
+  {
+    title: "E-commerce inteligente",
+    text: "Tiendas que no solo venden productos, sino experiencias: recomendaciones, stock, pagos y postventa automatizados con IA.",
+  },
+  {
+    title: "Automatización para PyMES",
+    text: "Automatizamos tareas repetitivas y caóticas con un objetivo claro: sacarte problemas de encima.",
+  },
+  {
+    title: "Diseño estratégico",
+    text: "Menos estética vacía, más diseño de flujos, sistemas y experiencias omnicanal que funcionan.",
+  },
+];
+
+const noList = [
+  "No hacemos webs sueltas sin estrategia.",
+  "No vendemos chatbots genéricos.",
+  "No trabajamos a pedido sin entender el negocio.",
+  "Eso se volvió barato, reemplazable y sin impacto real.",
+];
 ---
 
 <Layout>
-	<Welcome />
+  <main class="bg-(--color-offwhite) text-(--color-text-primary)">
+    <section
+      class="flex items-center relative overflow-hidden bg-(--color-indigo) text-(--color-offwhite) h-screen"
+    >
+      <div
+        class="absolute inset-0 bg-[radial-gradient(120%_120%_at_80%_-10%,rgba(109,187,132,0.18)_0%,rgba(30,33,63,0)_55%)]"
+      >
+      </div>
+      <div class="tech-grid"></div>
+      <div
+        class="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-6 py-24 text-center lg:py-32"
+      >
+        <div class="flex flex-col items-center gap-6">
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.3em] text-(--color-mint-soft)"
+          >
+            GannetLabs
+          </p>
+          <h1
+            class="text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-7xl"
+          >
+            <span class="font-semibold">
+              Soluciones de software con
+              <span class="text-(--color-mint)"> inteligencia Artificial</span>
+            </span>
+            <br />
+            para <span class="font-bold">hacer crecer tu negocio</span>
+          </h1>
+          <p class="max-w-2xl text-base text-(--color-offwhite)/80 sm:text-lg">
+            Aplicamos inteligencia artificial para ordenar procesos, integrar
+            sistemas y mejorar resultados. Potenciamos lo que ya usas con IA.
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-4">
+          <Button size="lg" variant="secondary">
+            <a href="#contacto">Hablemos de tu negocio</a>
+          </Button>
+          <Button variant="outline" size="lg">
+            <a href="#como">Ver cómo lo hacemos</a>
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="flex items-center bg-[linear-gradient(135deg,var(--color-indigo)_0%,var(--color-indigo-light)_55%,var(--color-indigo)_100%)] py-20 text-(--color-offwhite) sm:py-24 h-screen"
+    >
+      <div class="mx-auto w-full max-w-6xl px-6">
+        <div class="max-w-3xl">
+          <h2 class="text-7xl font-semibold leading-22 sm:text-3xl lg:text-8xl">
+            La tecnología dejó de ser el problema. El caos operativo no.
+          </h2>
+          <p class="mt-5 text-base text-(--color-offwhite)/80 sm:text-lg">
+            Muchas empresas tienen webs, sistemas, planillas, WhatsApp y
+            "soluciones" que no se hablan entre sí. El resultado: pérdida de
+            tiempo, decisiones lentas, tareas manuales y oportunidades que se
+            escapan. El problema no es faltar tecnología. Es no tener un sistema
+            que la ordene.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="flex flex-row items-center text-center mx-auto bg-(--color-indigo-light) py-20 text-accent-foreground sm:py-24 h-screen"
+    >
+      <div
+        class="flex items-center justify-center mx-auto w-full max-w-6xl px-6"
+      >
+        <div class="max-w-4xl">
+          <h2 class="text-4xl font-semibold leading-22 sm:text-3xl lg:text-8xl">
+            El <span class="text-accent"> orden operativo </span> es la nueva ventaja
+            competitiva.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="flex items-center bg-[linear-gradient(135deg,var(--color-indigo)_0%,var(--color-indigo-light)_55%,var(--color-indigo)_100%)] py-20 text-(--color-offwhite) sm:py-24 h-screen"
+    >
+      <div class="mx-auto w-full max-w-6xl px-6">
+        <div class="max-w-3xl">
+          <h2 class="lg:text-8xl font-semibold sm:text-4xl leading-22">
+            Aplicamos <span class="text-accent">IA</span> donde realmente importa
+          </h2>
+          <p class="mt-5 text-base text-(--color-offwhite)/80 sm:text-lg">
+            Desarrollamos soluciones de software con inteligencia artificial
+            para resolver problemas concretos del día a día. <span
+              class="font-semibold">No reemplazamos todo.</span
+            >, Aprovechamos lo que ya usás, lo integramos y lo mejoramos con IA.
+          </p>
+          <p class="mt-6 text-sm font-semibold text-(--color-mint-soft)">
+            Resultado primero. Tecnología después.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="como"
+      class="bg-[linear-gradient(135deg,var(--color-indigo)_0%,var(--color-indigo-light)_55%,var(--color-indigo)_100%)] py-20 text-(--color-offwhite) sm:py-24"
+    >
+      <div class="mx-auto w-full max-w-6xl px-6">
+        <div class="max-w-3xl">
+          <h2 class="text-3xl font-semibold leading-tight sm:text-4xl">
+            Sistemas inteligentes, no servicios aislados
+          </h2>
+          <p class="mt-4 text-base text-(--color-offwhite)/80 sm:text-lg">
+            Construimos sistemas completos, conectados a datos reales y pensados
+            para operar sin fricción.
+          </p>
+        </div>
+        <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {
+            services.map((service) => (
+              <Card className="border-(--color-divider) bg-white shadow-[0_20px_40px_rgba(30,33,63,0.08)]">
+                <CardHeader className="space-y-3">
+                  <CardTitle className="text-lg font-semibold text-(--color-indigo)">
+                    {service.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>{service.text}</CardContent>
+              </Card>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-(--color-indigo) py-20 text-(--color-offwhite) sm:py-24">
+      <div class="mx-auto w-full max-w-6xl px-6">
+        <div class="max-w-3xl">
+          <h2 class="text-3xl font-semibold leading-tight sm:text-4xl">
+            Lo que no hacemos (y por qué)
+          </h2>
+          <div class="mt-8 space-y-4 text-base text-(--color-offwhite)/85">
+            {
+              noList.map((item) => (
+                <div class="flex items-start gap-3">
+                  <span class="mt-2 inline-block h-2 w-2 rounded-full bg-(--color-mint)" />
+                  <p>{item}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="bg-[linear-gradient(135deg,var(--color-indigo)_0%,var(--color-indigo-light)_55%,var(--color-indigo)_100%)] py-20 text-(--color-offwhite) sm:py-24"
+    >
+      <div class="mx-auto w-full max-w-6xl px-6">
+        <div class="max-w-3xl">
+          <h2 class="text-3xl font-semibold leading-tight sm:text-4xl">
+            Soluciones por industria. Relaciones a largo plazo.
+          </h2>
+          <p class="mt-5 text-base text-(--color-offwhite)/80 sm:text-lg">
+            Nuestro enfoque es construir soluciones completas por vertical,
+            integrando IA, datos, automatización, e-commerce y diseño en un solo
+            sistema. Eso genera valor real, contratos sostenidos y soluciones
+            difíciles de copiar.
+          </p>
+          <p class="mt-6 text-sm font-semibold text-(--color-mint-soft)">
+            Construimos activos, no entregables.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contacto"
+      class="bg-(--color-indigo) py-20 text-(--color-offwhite) sm:py-24"
+    >
+      <div class="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6">
+        <div class="max-w-3xl">
+          <h2 class="text-3xl font-semibold leading-tight sm:text-4xl">
+            Menos caos. Más control. Mejores decisiones.
+          </h2>
+          <p class="mt-5 text-base text-(--color-offwhite)/80 sm:text-lg">
+            GannetLabs es para empresas que quieren dejar de apagar incendios y
+            empezar a operar con inteligencia. Si tu negocio creció, se volvió
+            complejo y necesitás ordenarlo, estamos para eso.
+          </p>
+        </div>
+        <div>
+          <Button size="lg" asChild>
+            <a href="mailto:hola@gannetlabs.com">Hablemos de tu sistema</a>
+          </Button>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
+
+<style>
+  .tech-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.28;
+    background-image:
+      radial-gradient(
+        circle,
+        rgba(167, 220, 192, 0.4) 0 1px,
+        transparent 1.6px
+      ),
+      radial-gradient(
+        circle,
+        rgba(109, 187, 132, 0.35) 0 1.5px,
+        transparent 2.2px
+      ),
+      radial-gradient(
+        circle at 20% 20%,
+        rgba(109, 187, 132, 0.18),
+        transparent 55%
+      );
+    background-size:
+      42px 42px,
+      70px 70px,
+      120% 120%;
+    background-position:
+      0 0,
+      0 0,
+      0% 0%;
+    animation:
+      tech-pan 14s ease-in-out infinite,
+      tech-float 10s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .tech-grid::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.8;
+    background-image:
+      radial-gradient(circle, rgba(167, 220, 192, 1) 0 3px, transparent 4.8px),
+      radial-gradient(
+        circle,
+        rgba(109, 187, 132, 0.95) 0 3.4px,
+        transparent 5px
+      ),
+      radial-gradient(
+        circle,
+        rgba(167, 220, 192, 0.95) 0 2.8px,
+        transparent 4.2px
+      ),
+      radial-gradient(
+        circle,
+        rgba(109, 187, 132, 1) 0 3.2px,
+        transparent 4.8px
+      ),
+      radial-gradient(
+        circle,
+        rgba(167, 220, 192, 0.9) 0 2.4px,
+        transparent 3.8px
+      ),
+      radial-gradient(circle, rgba(109, 187, 132, 1) 0 3.6px, transparent 5.4px);
+    background-size: 100% 100%;
+    background-position:
+      12% 22%,
+      68% 18%,
+      34% 62%,
+      82% 48%,
+      22% 78%,
+      74% 80%;
+    animation: tech-spark 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 6px rgba(167, 220, 192, 0.6));
+    pointer-events: none;
+  }
+
+  @keyframes tech-pan {
+    0% {
+      background-position:
+        0 0,
+        0 0,
+        0% 0%;
+    }
+    50% {
+      background-position:
+        70px 35px,
+        35px 70px,
+        70% 25%;
+    }
+    100% {
+      background-position:
+        0 0,
+        0 0,
+        0% 0%;
+    }
+  }
+
+  @keyframes tech-float {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(0, -6px, 0) scale(1.015);
+    }
+  }
+
+  @keyframes tech-spark {
+    0% {
+      opacity: 0.5;
+      filter: blur(0px);
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      opacity: 1;
+      filter: blur(0.8px);
+      transform: translate3d(6px, -4px, 0);
+    }
+    100% {
+      opacity: 0.6;
+      filter: blur(0px);
+      transform: translate3d(-4px, 3px, 0);
+    }
+  }
+</style>
