@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Logo from "@/components/Logo.astro";
+import ContactForm from "@/components/ContactForm.astro";
 
 const services = [
   {
@@ -120,9 +121,20 @@ const noList = [
               class="font-semibold">No reemplazamos todo.</span
             >, Aprovechamos lo que ya usás, lo integramos y lo mejoramos con IA.
           </p>
-          <p class="mt-6 text-sm font-semibold text-(--color-mint-soft)">
-            Resultado primero. Tecnología después.
-          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="flex flex-row items-center text-center mx-auto bg-(--color-indigo-light) py-20 text-accent-foreground sm:py-24 h-screen"
+    >
+      <div
+        class="flex items-center justify-center mx-auto w-full max-w-6xl px-6"
+      >
+        <div class="max-w-4xl">
+          <h2 class="text-4xl font-semibold leading-22 sm:text-3xl lg:text-8xl">
+            Resultado primero. <span class="text-accent"> Tecnología </span> después.
+          </h2>
         </div>
       </div>
     </section>
@@ -133,7 +145,7 @@ const noList = [
     >
       <div class="mx-auto w-full max-w-6xl px-6">
         <div class="max-w-3xl">
-          <h2 class="text-3xl font-semibold leading-tight sm:text-4xl">
+          <h2 class="lg:text-8xl font-semibold sm:text-4xl leading-22">
             Sistemas inteligentes, no servicios aislados
           </h2>
           <p class="mt-4 text-base text-(--color-offwhite)/80 sm:text-lg">
@@ -158,43 +170,25 @@ const noList = [
       </div>
     </section>
 
-    <section class="bg-(--color-indigo) py-20 text-(--color-offwhite) sm:py-24">
-      <div class="mx-auto w-full max-w-6xl px-6">
-        <div class="max-w-3xl">
-          <h2 class="text-3xl font-semibold leading-tight sm:text-4xl">
-            Lo que no hacemos (y por qué)
-          </h2>
-          <div class="mt-8 space-y-4 text-base text-(--color-offwhite)/85">
-            {
-              noList.map((item) => (
-                <div class="flex items-start gap-3">
-                  <span class="mt-2 inline-block h-2 w-2 rounded-full bg-(--color-mint)" />
-                  <p>{item}</p>
-                </div>
-              ))
-            }
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section
-      class="bg-[linear-gradient(135deg,var(--color-indigo)_0%,var(--color-indigo-light)_55%,var(--color-indigo)_100%)] py-20 text-(--color-offwhite) sm:py-24"
+      class="flex items-center bg-[linear-gradient(135deg,var(--color-indigo)_0%,var(--color-indigo-light)_55%,var(--color-indigo)_100%)] py-20 text-(--color-offwhite) sm:py-24 h-screen"
     >
       <div class="mx-auto w-full max-w-6xl px-6">
-        <div class="max-w-3xl">
-          <h2 class="text-3xl font-semibold leading-tight sm:text-4xl">
-            Soluciones por industria. Relaciones a largo plazo.
+        <div class="">
+          <h2 class="lg:text-8xl font-semibold sm:text-4xl leading-22">
+            <span class="text-accent">IA</span> que trabaja para vos.
           </h2>
-          <p class="mt-5 text-base text-(--color-offwhite)/80 sm:text-lg">
-            Nuestro enfoque es construir soluciones completas por vertical,
-            integrando IA, datos, automatización, e-commerce y diseño en un solo
-            sistema. Eso genera valor real, contratos sostenidos y soluciones
-            difíciles de copiar.
-          </p>
-          <p class="mt-6 text-sm font-semibold text-(--color-mint-soft)">
-            Construimos activos, no entregables.
-          </p>
+          <h3 class="text-5xl my-4">Menos tareas. Mejores decisiones.</h3>
+        </div>
+        <div class="my-18">
+          <h3 class="text-3xl my-4">Usamos inteligencia artificial para:</h3>
+          <ul>
+            <li>Automatizar procesos</li>
+            <li>Mejorar atención al cliente</li>
+            <li>Organizar y consultar información</li>
+            <li>Generar reportes claros</li>
+            <li>Acelerar la toma de decisiones</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -205,19 +199,32 @@ const noList = [
     >
       <div class="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6">
         <div class="max-w-3xl">
-          <h2 class="text-3xl font-semibold leading-tight sm:text-4xl">
-            Menos caos. Más control. Mejores decisiones.
+          <h2
+            class="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl"
+          >
+            Hablemos de tu negocio
           </h2>
           <p class="mt-5 text-base text-(--color-offwhite)/80 sm:text-lg">
-            GannetLabs es para empresas que quieren dejar de apagar incendios y
-            empezar a operar con inteligencia. Si tu negocio creció, se volvió
-            complejo y necesitás ordenarlo, estamos para eso.
+            Contanos qué estás usando hoy y qué te gustaría mejorar.
+          </p>
+          <p>
+            Nosotros te proponemos cómo aplicar IA de forma simple y efectiva.
           </p>
         </div>
-        <div>
-          <Button size="lg" asChild>
-            <a href="mailto:hola@gannetlabs.com">Hablemos de tu sistema</a>
-          </Button>
+        <ContactForm />
+      </div>
+    </section>
+
+    <section
+      class="flex flex-row items-center text-center mx-auto bg-(--color-indigo-light) py-20 text-accent-foreground sm:py-24 h-screen"
+    >
+      <div
+        class="flex items-center justify-center mx-auto w-full max-w-6xl px-6"
+      >
+        <div class="max-w-4xl">
+          <h2 class="text-4xl font-semibold leading-22 sm:text-3xl lg:text-8xl">
+            Acompañamos la <span class="text-accent">evolución</span> de tu negocio.
+          </h2>
         </div>
       </div>
     </section>
